@@ -3,10 +3,14 @@ package com.doratias.employeeTask.aspects;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Dor Atias
  */
+@Aspect
+@Component
 @Slf4j
 public class ExecutionTimeAspect {
 
