@@ -17,16 +17,18 @@ public interface EmployeeService {
 
     Employee createEmployee(Employee employee);
 
-    void deleteEmployeeById(int id);
-
-    void updateAddress(int id, Address address);
-
-    void updateChildren(int id , Child child);
-
-    void updateSpouse(int id , Spouse spouse);
-
     void updateEmployeeFirstName(int id, String newFirstName);
 
     void updateEmployeeLastName(int id, String newLastName);
+
+    void deleteEmployeeById(int id);
+
+//    void updateAddress(int id, Address address);
+//
+//    void updateChildren(int id , Child child);
+//
+//    void updateSpouse(int id , Spouse spouse);
+
+
 
 }

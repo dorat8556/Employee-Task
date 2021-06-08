@@ -6,6 +6,7 @@ import com.doratias.employeeTask.model.Child;
 import com.doratias.employeeTask.model.Employee;
 import com.doratias.employeeTask.model.Spouse;
 import com.doratias.employeeTask.repository.EmployeeRepository;
+import com.doratias.employeeTask.service.AddressService;
 import com.doratias.employeeTask.service.EmployeeService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,10 @@ import java.util.List;
 @AllArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
+    private final AddressService addressService;
+//    private final EmployeeRepository employeeRepository;
+//    private final EmployeeRepository employeeRepository;
+
 
     @Override
     public List<Employee> getAllEmployees() {
@@ -43,21 +48,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void updateAddress(int id, Address address) {
-
-    }
-
-    @Override
-    public void updateChildren(int id, Child child) {
-
-    }
-
-    @Override
-    public void updateSpouse(int id, Spouse spouse) {
-
-    }
-
-    @Override
     public void updateEmployeeFirstName(int id, String newFirstName) {
 
     }
@@ -66,4 +56,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void updateEmployeeLastName(int id, String newLastName) {
 
     }
+
+//    @Override
+//    public void updateAddress(int id, Address address) {
+//
+//    }
+//
+//    @Override
+//    public void updateChildren(int id, Child child) {
+//
+//    }
+//
+//    @Override
+//    public void updateSpouse(int id, Spouse spouse) {
+//
+//    }
 }

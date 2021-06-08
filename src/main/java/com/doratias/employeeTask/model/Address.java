@@ -18,7 +18,7 @@ import javax.persistence.Id;
 public class Address {
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     private String city;
 
