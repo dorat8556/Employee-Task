@@ -7,6 +7,7 @@ import com.doratias.employeeTask.model.Employee;
 import com.doratias.employeeTask.model.Spouse;
 import com.doratias.employeeTask.repository.EmployeeRepository;
 import com.doratias.employeeTask.service.AddressService;
+import com.doratias.employeeTask.service.ChildService;
 import com.doratias.employeeTask.service.EmployeeService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
     private final AddressService addressService;
-//    private final EmployeeRepository employeeRepository;
+    private final ChildService childService ;
 //    private final EmployeeRepository employeeRepository;
 
 
