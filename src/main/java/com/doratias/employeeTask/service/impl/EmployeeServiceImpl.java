@@ -9,6 +9,7 @@ import com.doratias.employeeTask.repository.EmployeeRepository;
 import com.doratias.employeeTask.service.AddressService;
 import com.doratias.employeeTask.service.ChildService;
 import com.doratias.employeeTask.service.EmployeeService;
+import com.doratias.employeeTask.service.SpouseService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
     private final AddressService addressService;
     private final ChildService childService ;
-//    private final EmployeeRepository employeeRepository;
+    private final SpouseService spouseService ;
 
 
     @Override
