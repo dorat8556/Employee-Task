@@ -3,10 +3,10 @@ package com.doratias.employeeTask.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author Dor Atias
@@ -15,9 +15,9 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employee {
+public class Employee extends RepresentationModel<Employee> {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String first_name;
@@ -31,5 +31,5 @@ public class Employee {
     private List<Address> addresses;
 
     @OneToMany
-    private Set<Child> children;
+    private List<Child> children;
 }

@@ -6,6 +6,9 @@ import com.doratias.employeeTask.service.ChildService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @author Dor Atias
  */
@@ -17,6 +20,11 @@ public class ChildServiceImpl implements ChildService {
     @Override
     public Child createChild(Child child) {
         return childRepository.save(child);
+    }
+
+    @Override
+    public List<Child> createChildren(List<Child> childrenList) {
+        return childrenList.stream().map(childRepository::save).collect(Collectors.toList());
     }
 
     @Override

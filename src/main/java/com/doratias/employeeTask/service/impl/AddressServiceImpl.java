@@ -6,6 +6,9 @@ import com.doratias.employeeTask.service.AddressService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @author Dor Atias
  */
@@ -22,8 +25,13 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
+    public List<Address> createAddresses(List<Address> addresses) {
+        return addresses.stream().map(addressRepository::save).collect(Collectors.toList());
+    }
+
+    @Override
     public void deleteAddress(int add_id) {
-         addressRepository.deleteById(add_id);
+        addressRepository.deleteById(add_id);
     }
 
     @Override

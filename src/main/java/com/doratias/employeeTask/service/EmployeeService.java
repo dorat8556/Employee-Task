@@ -17,9 +17,11 @@ public interface EmployeeService {
 
     Employee createEmployee(Employee employee);
 
-    void updateEmployeeFirstName(int id, String newFirstName);
+    Employee replaceEmployee(int id, Employee employee);
 
-    void updateEmployeeLastName(int id, String newLastName);
+    Employee updateEmployeeFirstName(int id, String newFirstName);
+
+    Employee updateEmployeeLastName(int id, String newLastName);
 
     void deleteEmployeeById(int id);
 

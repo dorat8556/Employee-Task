@@ -12,7 +12,9 @@ import com.doratias.employeeTask.service.EmployeeService;
 import com.doratias.employeeTask.service.SpouseService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,7 +42,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    @Transactional
+    @LogExecutionTime
     public Employee createEmployee(Employee employee) {
+        Employee newEmployee = new Employee();
+        newEmployee.setFirst_name(employee.getFirst_name());
+        newEmployee.setLast_name(employee.getLast_name());
+        newEmployee.setSpouse(createSpouse(employee));
+        newEmployee.setAddresses(createListOfAddresses(employee));
+        newEmployee.setChildren(createListOfChildren(employee));
         return employeeRepository.save(employee);
     }
 
@@ -50,27 +60,51 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void updateEmployeeFirstName(int id, String newFirstName) {
-
+    public Employee updateEmployeeFirstName(int id, String newFirstName) {
+        Employee employeeToUpdate = employeeRepository.getById(id);
+        employeeToUpdate.setFirst_name(newFirstName);
+        return employeeRepository.save(employeeToUpdate);
     }
 
     @Override
-    public void updateEmployeeLastName(int id, String newLastName) {
-
+    public Employee updateEmployeeLastName(int id, String newLastName) {
+        Employee employeeToUpdate = employeeRepository.getById(id);
+        employeeToUpdate.setFirst_name(newLastName);
+        return employeeRepository.save(employeeToUpdate);
     }
 
-//    @Override
-//    public void updateAddress(int id, Address address) {
-//
-//    }
-//
-//    @Override
-//    public void updateChildren(int id, Child child) {
-//
-//    }
-//
-//    @Override
-//    public void updateSpouse(int id, Spouse spouse) {
-//
-//    }
+    @Override
+    public Employee replaceEmployee(int id, Employee employee) {
+        Employee employeeToReplace = employeeRepository.getById(id);
+        employeeToReplace.setFirst_name(employee.getFirst_name());
+        employeeToReplace.setLast_name(employee.getLast_name());
+        employeeToReplace.setAddresses(createListOfAddresses(employee));
+        employeeToReplace.setSpouse(createSpouse(employee));
+        employeeToReplace.setChildren(createListOfChildren(employee));
+        return employeeRepository.save(employeeToReplace);
+    }
+
+    private List<Address> createListOfAddresses(Employee employee){
+        List<Address> addresses = new ArrayList<>();
+        if (employee.getAddresses().size() > 1) {
+            addresses = addressService.createAddresses(employee.getAddresses());
+        } else {
+            addresses.add(addressService.createAddress(employee.getAddresses().get(0)));
+        }
+        return addresses;
+    }
+
+    private List<Child> createListOfChildren(Employee employee){
+        List<Child> childrenList = new ArrayList<>();
+        if(employee.getChildren().size() > 1){
+            childrenList = childService.createChildren(employee.getChildren());
+        }else {
+            childrenList.add(childService.createChild(employee.getChildren().get(0)));
+        }
+        return childrenList;
+    }
+
+    private Spouse createSpouse(Employee employee){
+        return spouseService.createSpouse(employee.getSpouse());
+    }
 }

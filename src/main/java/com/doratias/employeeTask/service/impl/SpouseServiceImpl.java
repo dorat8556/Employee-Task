@@ -1,6 +1,5 @@
 package com.doratias.employeeTask.service.impl;
 
-import com.doratias.employeeTask.model.Child;
 import com.doratias.employeeTask.model.Spouse;
 import com.doratias.employeeTask.repository.SpouseRepository;
 import com.doratias.employeeTask.service.SpouseService;
