@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "90f8af6c-67a9-4f72-b571-4faa9de88e34",
+		"name": "EmployeeManagementTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getEmployeeById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateEmployee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\t\t\"first_name\" :\"Benny\" ,\r\n\t\t\t\"last_name\" : \"Talpa\" , \r\n\t\t\t\"spouse\" : {\r\n\t\t\t\t\"name\" : \"Levav\"\r\n\t\t\t\t},\r\n\t\t\t\"addresses\" : \r\n\t\t\t\t[{\"city\" : \"Ashkelon\" , \"country\" : \"Israel\"}],\r\n\t\t\t\"children\" : \r\n\t\t\t\t[{\"name\" : \"Chips\", \"age\": 2}]\r\n\t\t\r\n\t\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/employee/add-employee",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						"add-employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllEmployees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/employee/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "repalceEmployeeData",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\t\t\"first_name\" :\"Benny\" ,\r\n\t\t\t\"last_name\" : \"Talpa\" , \r\n\t\t\t\"spouse\" : {\r\n\t\t\t\t\"name\" : \"Levav\"\r\n\t\t\t\t},\r\n\t\t\t\"addresses\" : \r\n\t\t\t\t[{\"city\" : \"Ashkelon\" , \"country\" : \"Israel\"}],\r\n\t\t\t\"children\" : \r\n\t\t\t\t[{\"name\" : \"Chips\", \"age\": 2}]\r\n\t\t\r\n\t\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/employee/replace-employee/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						"replace-employee",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateFirstName",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Dor",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/employee/update-first-name/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						"update-first-name",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLastName",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Dor",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/employee/update-first-name/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						"update-first-name",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployeeAddress",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"city\" : \"Ashdod\" , \"country\" : \"Israel\"},{\"city\" : \"Ashkelon\" , \"country\" : \"Israel\"}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/employee/update-address/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						"update-address",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployeeChildren",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"name\" : \"Chips\", \"age\": 2},{\"name\" : \"Meny\", \"age\": 15}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/employee/update-children/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						"update-children",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployeeSpouse",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\" : \"Noa\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/employee/update-spouse/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						"update-spouse",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEmployeeById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/employee/delete-Employee/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						"delete-Employee",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
