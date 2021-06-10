@@ -3,6 +3,7 @@ package com.doratias.employeeTask.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.Entity;
@@ -15,6 +16,7 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
+@DynamicUpdate
 @NoArgsConstructor
 @AllArgsConstructor
 public class Spouse extends RepresentationModel<Employee> {

@@ -25,11 +25,11 @@ public interface EmployeeService {
 
     void deleteEmployeeById(int id);
 
-//    void updateAddress(int id, Address address);
-//
-//    void updateChildren(int id , Child child);
-//
-//    void updateSpouse(int id , Spouse spouse);
+    Employee updateEmployeeAddress(int id, List<Address> addresses);
+
+    Employee updateEmployeeChildren(int id, List<Child> children);
+
+    Employee updateEmployeeSpouse(int id, Spouse spouse);
 
 
 
