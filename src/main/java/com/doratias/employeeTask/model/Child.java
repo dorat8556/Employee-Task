@@ -1,6 +1,7 @@
 package com.doratias.employeeTask.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
@@ -17,6 +18,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@Builder
 @DynamicUpdate
 @NoArgsConstructor
 @AllArgsConstructor
